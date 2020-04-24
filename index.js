@@ -3,9 +3,10 @@ const github = require('@actions/github');
 const { promises: fs } = require('fs');
 
 const main = async () => {
+  console.log('main')
   try {
     const filename = core.getInput('filename') || 'example.json'
-    const { url } = core.getInput('url') || 'example.com'
+    const url = core.getInput('url') || 'example.com'
     console.log(url)
     
     const data = await fs.readFile(filename, 'utf8')
