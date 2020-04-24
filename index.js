@@ -16,10 +16,12 @@ const main = async () => {
 
     const url2 = core.getInput('url2') || 'example.com'
     console.log(url2)
-
-    // const url3 = core.getInput('url3') || 'example.com'
-    // console.log(url3)
-
+    
+    const url3 = core.getInput('url3') || 'example.com'
+    console.log(url3)
+    
+    console.log(JSON.stringify(url2))
+    
     console.log(INPUT_URL)
     const urlEnv = INPUT_URL
     console.log(urlEnv.url)
