@@ -8,7 +8,7 @@ const main = async () => {
     const filename = core.getInput('filename') || 'example.json'
     console.log(filename)
     
-    const { url } = core.getInput('url') || 'example.com'
+    const { url } = JSON.parse(core.getInput('url'))
     console.log(url)
 
     const data = await fs.readFile(filename, 'utf8')
