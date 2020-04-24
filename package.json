@@ -12,8 +12,5 @@
   "devDependencies": {
     "@actions/core": "^1.2.3",
     "@actions/github": "^2.1.1"
-  },
-  "dependencies": {
-    "fs": "0.0.1-security"
   }
 }
