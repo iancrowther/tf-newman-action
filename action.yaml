@@ -1,13 +1,12 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'tf-newman-action'
+description: 'Newman environment host from Terraform output'
 inputs:
-  url:
-    description: 'Who to greet'
+  filename:
+    description: 'Newman environment filename'
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  url:
+    description: 'Newman environment baseUrl'
+    required: true
 runs:
   using: 'node12'
   main: 'index.js'

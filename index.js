@@ -3,14 +3,9 @@ const github = require('@actions/github');
 const { promises: fs } = require('fs');
 
 const main = async () => {
-  console.log('main')
   try {
-    const filename = core.getInput('filename') || 'example.json'
-    console.log(filename)
-    
+    const filename = core.getInput('filename')
     const { url } = JSON.parse(core.getInput('url'))
-    console.log(url)
-
     const data = await fs.readFile(filename, 'utf8')
     const updated = data.replace(/blank_host/g, url.value)
     console.log(updated)
