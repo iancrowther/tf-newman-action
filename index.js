@@ -5,7 +5,8 @@ const { promises: fs } = require('fs');
 const main = async () => {
   try {
     const filename = core.getInput('filename') || 'example.json'
-    const url = core.getInput('url') || 'example.com'
+    const { url } = core.getInput('url') || 'example.com'
+    console.log(url)
     
     const data = await fs.readFile(filename, 'utf8')
     const updated = data.replace(/blank_host/g, url)
