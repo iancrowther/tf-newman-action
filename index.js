@@ -8,8 +8,8 @@ const main = async () => {
     const filename = core.getInput('filename') || 'example.json'
     console.log(filename)
     
-    const url = core.getInput('url') || 'example.com'
-    console.log(url)
+    // const url = core.getInput('url') || 'example.com'
+    // console.log(url)
 
     // const url1 = core.getInput('url1') || 'example.com'
     // console.log(url1)
