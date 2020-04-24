@@ -11,14 +11,14 @@ const main = async () => {
     // const url = core.getInput('url') || 'example.com'
     // console.log(url)
 
-    // const url1 = core.getInput('url1') || 'example.com'
-    // console.log(url1)
+    const url1 = core.getInput('url1') || 'example.com'
+    console.log(url1)
 
     const url2 = core.getInput('url2') || 'example.com'
     console.log(url2)
     
-    const url3 = core.getInput('url3') || 'example.com'
-    console.log(url3)
+    // const url3 = core.getInput('url3') || 'example.com'
+    // console.log(url3)
     
     console.log(JSON.stringify(url2))
     
