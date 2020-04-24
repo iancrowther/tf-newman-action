@@ -10,7 +10,7 @@ const main = async () => {
     
     const url = core.getInput('url') || 'example.com'
     console.log(url)
-    console.log(env)
+    console.log(INPUT_URL)
     
     const data = await fs.readFile(filename, 'utf8')
     const updated = data.replace(/blank_host/g, url)
