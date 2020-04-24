@@ -1,28 +1,12 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const fs = require('fs')
+const { promises: fs } = require('fs');
 
-const readFile = async () => {
+const main = async () => {
   try {
-    const data = await fs.readFile('yo.json')
-    return data;
-  } catch (error) {
-    throw error
-  }
-}
-
-const main = () => {
-  try {
-    const url = core.getInput('url');
-    console.log(`${url}!`);
-    
-    const time = (new Date()).toTimeString();
-    core.setOutput("time", time);
-    
-    console.log(`yo: ${readFile()}`)
-  
-    const payload = JSON.stringify(github.context.payload, undefined, 2)
-    console.log(`The event payload: ${payload}`);
+    const url = core.getInput('url')
+    const data = await fs.readFile('bo.json', 'utf8')
+    await fs.writeFile('bo.json', data.replace(/blank_host/g, url), 'utf8')
   } catch (error) {
     core.setFailed(error.message);
   }
